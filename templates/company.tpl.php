@@ -10,25 +10,7 @@
 
         <div class="cap"> <?php echo $cap;?> </div>
 
-        <aside>
-            <nav>
-                <ui class = "top menu">
-                    <li><a href="index.php"> Главная страница</a></li>
-                    <li><a href="author.php">Об авторе</a></li>
-                    <li class="active">О фирме</a></li>
-                    </ul>
-                </ui>
-            </nav>
-
-            <nav>
-                <ul class="aside-menu">
-                    <li><a href="lenses.html">Объективы</a></li>
-                    <li><a href="photo.html">Фотоаппараты</a></li>
-                    <li><a href="flashes.html">Вспышки</a></li>
-                    <li><a href="memoryCards.html">Карты памяти</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <div class="menu"> <?php echo $menu;?> </div>
 
         <section>
             <h2> Наша команда </h2>

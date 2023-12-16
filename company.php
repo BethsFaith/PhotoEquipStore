@@ -17,6 +17,11 @@ $locationImage = $arr['locationImage']->content;
 
 $cap = render('cap');
 $footer = render('footer');
+
+$menuItems = getMenuItems('company');
+$menuItems = extractMenuItems($menuItems);
+$menu = render('menu', array('items'=>$menuItems));
+
 echo render('company', array('cap'=>$cap, 'footer'=>$footer, 'companyImage1' => $companyImage1,
     'companyImage2' => $companyImage2, 'address'=>$address, 'phoneNumber'=>$phoneNumber,
-    'locationImage'=>$locationImage));
+    'locationImage'=>$locationImage, 'menu'=>$menu));

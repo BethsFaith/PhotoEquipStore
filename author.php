@@ -14,5 +14,10 @@ $authorImage = $arr['authorImage']->content;
 
 $cap = render('cap');
 $footer = render('footer');
+
+$menuItems = getMenuItems('author');
+$menuItems = extractMenuItems($menuItems);
+$menu = render('menu', array('items'=>$menuItems));
+
 echo render('author', array('cap'=>$cap, 'footer'=>$footer, 'authorName'=>$authorName, 'authorWork'=>$authorWork,
-    'authorImage'=>$authorImage));
+    'authorImage'=>$authorImage, 'menu'=>$menu));
