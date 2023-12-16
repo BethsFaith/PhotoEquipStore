@@ -19,7 +19,6 @@ $cap = render('cap');
 $footer = render('footer');
 
 $menuItems = getMenuItems('company');
-$menuItems = extractMenuItems($menuItems);
 $menu = render('menu', array('items'=>$menuItems));
 
 echo render('company', array('cap'=>$cap, 'footer'=>$footer, 'companyImage1' => $companyImage1,

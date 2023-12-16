@@ -20,7 +20,6 @@ $cap = render('cap');
 $footer = render('footer');
 
 $menuItems = getMenuItems('mainPage');
-$menuItems = extractMenuItems($menuItems);
 $menu = render('menu', array('items'=>$menuItems));
 
 echo render('index', array('cap'=>$cap, 'contentImage'=>$contentImage, 'contentImage2'=>$contentImage2,

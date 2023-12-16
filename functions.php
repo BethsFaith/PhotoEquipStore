@@ -31,32 +31,42 @@ function getPageElements($conn, $pageId): array
     return $arr;
 }
 
-function getMenuItems($pageName) : array
+function getProducts($conn, $table): array
 {
-    $arr = array(
-        'mainPage'=> new MenuItem('<li>', '</a></li>', '<a href="index.php">','Главная страница'),
-        'author'=>new MenuItem('<li>', '</a></li>','<a href="author.php">','Об авторе'),
-        'company'=>new MenuItem('<li>', '</a></li>','<a href="company.php">','О фирме'),
-        'lenses'=>new MenuItem('<li>', '</a></li>','<a href="lenses.html">','Объективы'),
-        'cameras'=>new MenuItem('<li>', '</a></li>','<a href="templates/photo.html">','Фотоаппараты'),
-        'flashes'=>new MenuItem('<li>', '</a></li>','<a href="lenses.html">','Вспышки'),
-        'memoryCards'=>new MenuItem('<li>', '</a></li>','<a href="lenses.html">','Карты памяти'),
-    );
+    $sql = "select * from $table";
+    $result = $conn->query($sql);
 
-    $arr[$pageName]->setBegin('<li class="active">');
-    $arr[$pageName]->setContent('');
+    $arr = array();
+    while($row = $result->fetch()){
+        $arr[] = $row;
+    }
 
     return $arr;
 }
 
-function extractMenuItems(array $menuItems): array
+function getProductById($conn, $table, $id): array
 {
-    $menuExtractedItems = array();
-    foreach ($menuItems as $page => $elem ) {
-        $menuExtractedItems[$page] = $elem->extract();
-    }
+    $sql = "select * from $table where id = $id";
+    $result = $conn->query($sql);
 
-    return $menuExtractedItems;
+    return $result->fetch();
+}
+
+function getMenuItems($pageName) : array
+{
+    $arr = array(
+        'mainPage'=> array('class'=>'', 'content'=>'index.php','name'=>'Главная страница'),
+        'author'=>array('class'=>'', 'content'=>'author.php','name'=>'Об авторе'),
+        'company'=>array('class'=>'', 'content'=>'company.php','name'=>'О фирме'),
+        'lenses'=>array('class'=>'', 'content'=>'lenses.html','name'=>'Объективы'),
+        'cameras'=>array('class'=>'', 'content'=>'cameras.php','name'=>'Фотоаппараты'),
+        'flashes'=>array('class'=>'', 'content'=>'lenses.html','name'=>'Вспышки'),
+        'memoryCards'=>array('class'=>'', 'content'=>'lenses.html','name'=>'Карты памяти'),
+    );
+
+    $arr[$pageName]['class'] = '"active"';
+
+    return $arr;
 }
 
 function render($tmp,$vars = array()) {

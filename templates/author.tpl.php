@@ -5,7 +5,6 @@
     <title>Об авторе</title>
     <link rel="stylesheet" href="style.css">
 </head>
-</head>
 <body>
 <div id="wrapper">
     <div class="cap"> <?php echo $cap;?> </div>
