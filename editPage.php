@@ -9,9 +9,9 @@ $name = $_POST["name"];
 $content = $_POST["content"];
 $page = $_GET['page'];
 
-/*echo $name;
+echo $name;
 echo $content;
-echo $page;*/
+echo $page;
 
 $DB = getDB();
 if (!$DB->isOpen()) {

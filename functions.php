@@ -43,7 +43,7 @@ function updatePageElement($conn, $pageId, $name, $content)
 {
     $sql = "update PAGE_ELEMENTS set content = '$content' where name = '$name' and page_id = $pageId";
     try {
-        /*echo $sql;*/
+        echo $sql;
         $result = $conn->query($sql);
 
         return true;
@@ -54,7 +54,22 @@ function updatePageElement($conn, $pageId, $name, $content)
     }
 }
 
-function getProducts($conn, $table): array
+function updateGoodProperty($conn, $id, $propertyName, $propertyValue, $table)
+{
+    $sql = "update $table set $propertyName = '$propertyValue' where id = $id";
+    try {
+        echo $sql;
+        $result = $conn->query($sql);
+
+        return true;
+    }
+    catch (PDOException $e) {
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+function getGoods($conn, $table): array
 {
     $sql = "select * from $table";
     $result = $conn->query($sql);
@@ -67,7 +82,7 @@ function getProducts($conn, $table): array
     return $arr;
 }
 
-function getProductById($conn, $table, $id): array
+function getGoodById($conn, $table, $id): array
 {
     $sql = "select * from $table where id = $id";
     $result = $conn->query($sql);

@@ -15,6 +15,6 @@ $footer = render('footer');
 $menuItems = getCommonMenuItems('cameras');
 $menu = render('menu', array('items'=>$menuItems));
 
-$product = getProductById($DB->getConnection(), 'CAMERAS', $_GET['id']);
+$product = getGoodById($DB->getConnection(), 'CAMERAS', $_GET['id']);
 
 echo render('camera', array('cap'=>$cap, 'footer'=>$footer, 'menu'=>$menu, 'product'=>$product));

@@ -26,4 +26,4 @@ $menuItems = getEditMenuItems('mainPage');
 
 $menu = render('menu', array('items' => $menuItems));
 
-echo render('edit', array('menu' => $menu, 'items'=>$items, 'page'=>'MAIN_PAGE'));
+echo render('edit', array('menu' => $menu, 'items'=>$items, 'action'=>"editPage.php?page=MAIN_PAGE"));
