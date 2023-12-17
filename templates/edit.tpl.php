@@ -8,6 +8,8 @@
 <body>
 <div id="wrapper">
 
+    <div class="cap"> <?php echo $cap;?> </div>
+
     <div class="menu"> <?php echo $menu;?> </div>
 
     <section>

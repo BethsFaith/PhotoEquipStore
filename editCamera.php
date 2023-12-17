@@ -30,6 +30,8 @@ $items[] = array("name"=>'total_mp_quantity','content'=>$product['total_mp_quant
 $items[] = array("name"=>'price','content'=>$product['price']);
 $items[] = array("name"=>'image','content'=>$product['image']);
 
-echo render('edit', array('cap'=>'', 'footer'=>'', 'menu'=>$menu, 'action'=>"editGood.php?table=CAMERAS&id=$id",
+$footer = render('forms/button', array('ref'=>"deleteGood.php?id=$id&table=CAMERAS", 'title'=>'Удалить'));
+
+echo render('edit', array('cap'=>$footer, 'footer'=>'', 'menu'=>$menu, 'action'=>"editGood.php?table=CAMERAS&id=$id",
     'items'=>$items));
 ?>

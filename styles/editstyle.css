@@ -202,3 +202,15 @@ footer a {
     color: #8f8f8f;
     text-align: left;
 }
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+    color: #ffffff;
+    background-color: #525151;
+    width: 200px;
+    height: 40px;
+}

@@ -32,5 +32,7 @@ $productTable = render('forms/productTable', array('products'=>$products, 'title
 $menuItems = getEditMenuItems('cameras');
 $menu = render('forms/menu', array('items' => $menuItems));
 
-echo render('goods', array('cap'=>'','footer'=>' ', 'menu' => $menu, 'page'=>'cameras',
+$footer = render('forms/button', array('ref'=>'addGood.php', 'title'=>'Добавить новый товар'));
+
+echo render('goods', array('cap'=>$footer,'footer'=>'', 'menu' => $menu, 'page'=>'cameras',
     'productTable'=>$productTable, 'title'=>'Admin_Фотоаппараты'));
