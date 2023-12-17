@@ -13,11 +13,11 @@ $authorName = $arr['authorName']->content;
 $authorWork = $arr['authorWork']->content;
 $authorImage = $arr['authorImage']->content;
 
-$cap = render('cap');
-$footer = render('footer');
+$cap = render('forms/cap');
+$footer = render('forms/footer');
 
 $menuItems = getCommonMenuItems('author');
-$menu = render('menu', array('items'=>$menuItems));
+$menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('author', array('cap'=>$cap, 'footer'=>$footer, 'authorName'=>$authorName, 'authorWork'=>$authorWork,
     'authorImage'=>$authorImage, 'menu'=>$menu));

@@ -9,11 +9,11 @@ if (!$DB->isOpen()) {
     return;
 }
 
-$cap = render('cap');
-$footer = render('footer');
+$cap = render('forms/cap');
+$footer = render('forms/footer');
 
 $menuItems = getCommonMenuItems('cameras');
-$menu = render('menu', array('items'=>$menuItems));
+$menu = render('forms/menu', array('items'=>$menuItems));
 
 $product = getGoodById($DB->getConnection(), 'CAMERAS', $_GET['id']);
 

@@ -15,7 +15,7 @@ if ($user->logIn(getDB()->getConnection(), $login, $password)) {
 
     $menuItems = getEditMenuItems('mainPage');
 
-    $menu = render('menu', array('items'  => $menuItems));
+    $menu = render('forms/menu', array('items'  => $menuItems));
 
     echo render('adminPanel', array('menu'=>$menu, '_SESSION'=>$_SESSION));
 }

@@ -15,8 +15,7 @@ $products = array();
 foreach ($arr as $product) {
     $values = array();
 
-    $values[] = '<a href="editCamera.php?id=' . $product['id'] . '">' .
-        '<img src="' . $product['image'] . '" height="100" width="100">' . '</a>';
+    $values[] = render('forms/image', array('ref'=>'editCamera.php', 'id'=>$product['id'], 'image'=>$product['image']));
     $values[] = $product['name'];
     $values[] = $product['quantity'];
     $values[] = $product['total_mp_quantity'];
@@ -26,12 +25,12 @@ foreach ($arr as $product) {
     $products[] = $values;
 }
 
-$productTable = render('productTable', array('products'=>$products, 'titles'=>
+$productTable = render('forms/productTable', array('products'=>$products, 'titles'=>
     array('','Название товара','В наличии','Количество мегапикселей (общее)',
         'Тип матрицы', 'Цена')));
 
 $menuItems = getEditMenuItems('cameras');
-$menu = render('menu', array('items' => $menuItems));
+$menu = render('forms/menu', array('items' => $menuItems));
 
 echo render('goods', array('cap'=>'','footer'=>' ', 'menu' => $menu, 'page'=>'cameras',
     'productTable'=>$productTable, 'title'=>'Admin_Фотоаппараты'));

@@ -15,7 +15,7 @@ if (!$DB->isOpen()) {
 $footer = render('footer');*/
 
 $menuItems = getEditMenuItems('cameras');
-$menu = render('menu', array('items'=>$menuItems));
+$menu = render('forms/menu', array('items'=>$menuItems));
 
 $product = getGoodById($DB->getConnection(), 'CAMERAS', $id);
 $items = array();

@@ -24,6 +24,6 @@ foreach ($arr as $key=>$value) {
 
 $menuItems = getEditMenuItems('mainPage');
 
-$menu = render('menu', array('items' => $menuItems));
+$menu = render('forms/menu', array('items' => $menuItems));
 
 echo render('edit', array('menu' => $menu, 'items'=>$items, 'action'=>"editPage.php?page=MAIN_PAGE"));
