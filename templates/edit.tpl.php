@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AdminPanel</title>
-    <link rel="stylesheet" href="editstyle.css">
+    <link rel="stylesheet" href="styles/editstyle.css">
 </head>
 <body>
 <div id="wrapper">
