@@ -11,7 +11,7 @@ if (!$DB->isOpen()) {
 $cap = render('cap');
 $footer = render('footer');
 
-$menuItems = getMenuItems('cameras');
+$menuItems = getCommonMenuItems('cameras');
 $menu = render('menu', array('items'=>$menuItems));
 
 $arr = getProducts($DB->getConnection(), 'CAMERAS');

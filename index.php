@@ -2,6 +2,7 @@
 
 require_once "connect.php";
 include 'functions.php';
+include "menu.php";
 
 $DB = getDB();
 if (!$DB->isOpen()) {
@@ -19,7 +20,7 @@ $quoteAuthor = $arr['quoteAuthor1']->content;
 $cap = render('cap');
 $footer = render('footer');
 
-$menuItems = getMenuItems('mainPage');
+$menuItems = getCommonMenuItems('mainPage');
 $menu = render('menu', array('items'=>$menuItems));
 
 echo render('index', array('cap'=>$cap, 'contentImage'=>$contentImage, 'contentImage2'=>$contentImage2,

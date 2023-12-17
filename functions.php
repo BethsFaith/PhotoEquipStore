@@ -1,7 +1,15 @@
 <?php
 
 include 'PageElementEntity.php';
-include 'MenuItem.php';
+
+function render($tmp,$vars = array()) {
+    if(file_exists('templates/'.$tmp.'.tpl.php')) {
+        ob_start();
+        extract($vars);
+        require 'templates/' . $tmp . '.tpl.php';
+        return ob_get_clean();
+    }
+}
 
 function getPageId($conn, $pageName)
 {
@@ -50,32 +58,6 @@ function getProductById($conn, $table, $id): array
     $result = $conn->query($sql);
 
     return $result->fetch();
-}
-
-function getMenuItems($pageName) : array
-{
-    $arr = array(
-        'mainPage'=> array('class'=>'', 'content'=>'index.php','name'=>'Главная страница'),
-        'author'=>array('class'=>'', 'content'=>'author.php','name'=>'Об авторе'),
-        'company'=>array('class'=>'', 'content'=>'company.php','name'=>'О фирме'),
-        'lenses'=>array('class'=>'', 'content'=>'lenses.html','name'=>'Объективы'),
-        'cameras'=>array('class'=>'', 'content'=>'cameras.php','name'=>'Фотоаппараты'),
-        'flashes'=>array('class'=>'', 'content'=>'lenses.html','name'=>'Вспышки'),
-        'memoryCards'=>array('class'=>'', 'content'=>'lenses.html','name'=>'Карты памяти'),
-    );
-
-    $arr[$pageName]['class'] = '"active"';
-
-    return $arr;
-}
-
-function render($tmp,$vars = array()) {
-    if(file_exists('templates/'.$tmp.'.tpl.php')) {
-        ob_start();
-        extract($vars);
-        require 'templates/' . $tmp . '.tpl.php';
-        return ob_get_clean();
-    }
 }
 
 ?>

@@ -3,6 +3,7 @@
 
 require_once "connect.php";
 include 'functions.php';
+include "menu.php";
 
 $DB = getDB();
 
@@ -18,7 +19,7 @@ $locationImage = $arr['locationImage']->content;
 $cap = render('cap');
 $footer = render('footer');
 
-$menuItems = getMenuItems('company');
+$menuItems = getCommonMenuItems('company');
 $menu = render('menu', array('items'=>$menuItems));
 
 echo render('company', array('cap'=>$cap, 'footer'=>$footer, 'companyImage1' => $companyImage1,

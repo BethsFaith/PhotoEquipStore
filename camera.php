@@ -1,6 +1,7 @@
 <?php
 
 require_once "connect.php";
+include "menu.php";
 include 'functions.php';
 
 $DB = getDB();
@@ -11,7 +12,7 @@ if (!$DB->isOpen()) {
 $cap = render('cap');
 $footer = render('footer');
 
-$menuItems = getMenuItems('cameras');
+$menuItems = getCommonMenuItems('cameras');
 $menu = render('menu', array('items'=>$menuItems));
 
 $product = getProductById($DB->getConnection(), 'CAMERAS', $_GET['id']);
