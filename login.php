@@ -13,15 +13,7 @@ if ($user->logIn(getDB()->getConnection(), $login, $password)) {
 
     $_SESSION['user']=["name"=>$user->getLogin()];
 
-    $menuItems = getCommonMenuItems('mainPage');
-
-    $menuItems['mainPage']['content'] = "";
-    $menuItems['author']['content'] = "";
-    $menuItems['company']['content'] = "";
-    $menuItems['flashes']['content'] = "";
-    $menuItems['cameras']['content'] = "";
-    $menuItems['lenses']['content'] = "";
-    $menuItems['memoryCards']['content'] = "";
+    $menuItems = getEditMenuItems('mainPage');
 
     $menu = render('menu', array('items'  => $menuItems));
 

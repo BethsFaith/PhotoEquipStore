@@ -39,6 +39,21 @@ function getPageElements($conn, $pageId): array
     return $arr;
 }
 
+function updatePageElement($conn, $pageId, $name, $content)
+{
+    $sql = "update PAGE_ELEMENTS set content = '$content' where name = '$name' and page_id = $pageId";
+    try {
+        /*echo $sql;*/
+        $result = $conn->query($sql);
+
+        return true;
+    }
+    catch (PDOException $e) {
+        echo $e->getMessage();
+        return false;
+    }
+}
+
 function getProducts($conn, $table): array
 {
     $sql = "select * from $table";

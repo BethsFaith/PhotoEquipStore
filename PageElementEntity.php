@@ -2,9 +2,9 @@
 
 class PageElementEntity
 {
-    public $id;
-    public $name;
-    public $content;
-    public $type;
-    public $page_id;
+    public int $id;
+    public string $name;
+    public string $content;
+    public string $type;
+    public int $page_id;
 }
