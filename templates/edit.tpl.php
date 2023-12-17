@@ -15,14 +15,24 @@
     $num = count($items);
     for ($i = 0; $i < $num; ++$i) {
         ?>
-    <h2> <?php echo $items[$i]['name']?> </h2>
-    <form action="edit.php?name=<?php echo $items[$i]['name']?>&page=<?php echo $page?>" method="POST">
-        <p>Контент: <input type="text" name="content" value="<?php echo $items[$i]['content']?>"
-            /></p>
-        <input type="submit" value="Принять">
+    <h3> <?php echo $items[$i]['name']?> </h3>
+        <p><?php echo $items[$i]['content']?></p>
     <?php } ?>
-        <figure>
 
+        <h2>Элемент: </h2>
+        <form action="edit.php?page=<?php echo $page?>" method="POST">
+            <select name = "name">
+        <?php
+        for ($i = 0; $i < $num; ++$i) { ?>
+                <option label="<?php echo $items[$i]['name']?>"
+                        value= "<?php echo $items[$i]['name']?>">
+                </option>
+        <?php } ?>
+            </select>
+            <h2>Содержимое: <input type="text" name="content" /></h2>
+            <input type="submit" value="Отправить">
+        </form>
+        <figure>
 </div>
 
 </body>
