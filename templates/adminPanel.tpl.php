@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AdminPanel</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/editstyle.css">
 </head>
 <body>
 <div id="wrapper">
@@ -15,8 +15,7 @@
     <div class="menu"> <?php echo $menu;?> </div>
 
     <?php else: ?>
-        <h1>Вы не авторизованы</h1>
-        <a href="login.php" class="login-btn">Войти</a>
+        <h1>Вы не авторизованы, ухАдите</h1>
     <?php endif; ?>
 </div>
 

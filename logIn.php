@@ -13,8 +13,9 @@ if ($user->logIn(getDB()->getConnection(), $login, $password)) {
 
     $_SESSION['user']=["name"=>$user->getLogin()];
 
-    $menuItems = getEditMenuItems('MAIN_PAGE');
+    setcookie('user', $user->getLogin(), time()+60*60*24);
 
+    $menuItems = getEditMenuItems('MAIN_PAGE', "$login");
     $menu = render('forms/menu', array('items'  => $menuItems));
 
     echo render('adminPanel', array('menu'=>$menu, '_SESSION'=>$_SESSION));

@@ -6,10 +6,7 @@ include "DBFunc.php";
 include "User.php";
 include "menu.php";
 
-$name = $_POST["name"];
-$content = $_POST["content"];
 $page = $_GET['page'];
-
 $login = $_GET['login'];
 if (isset($_COOKIE['user'])) {
     $cashLogin = $_COOKIE['user'];
@@ -18,13 +15,22 @@ if (isset($_COOKIE['user'])) {
         if (!$DB->isOpen()) {
             return;
         }
-        $page_id = getPageId($DB->getConnection(), $page);
-        $res = updatePageElement($DB->getConnection(), $page_id, $name, $content);
-        echo $res ? "Изменения сохранены" : "Произошла ошибка во время сохранения" ;
+
+        $id = getPageId($DB->getConnection(), $page);
+        $arr = getPageElements($DB->getConnection(), $id);
+        $items = array();
+
+        foreach ($arr as $key=>$value) {
+            $items[] = array("name"=>$value->name,'content'=>$value->content);
+        }
 
         $menuItems = getEditMenuItems($page, $login);
+
         $menu = render('forms/menu', array('items' => $menuItems));
-        echo render('empty', array('menu'=>$menu));
+
+        echo render('edit', array('cap'=>'','menu' => $menu, 'items'=>$items,
+            'action'=>"updatePage.php?page=$page&login=$login"));
+
         return;
     }
 }

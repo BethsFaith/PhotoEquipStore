@@ -10,6 +10,9 @@
 
     <div class="cap"> <?php echo $cap;?> </div>
 
+    <p class="heading"> User:
+        <?php echo $_COOKIE['user']; ?>
+
     <div class="menu"> <?php echo $menu;?> </div>
 
     <section>

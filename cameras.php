@@ -21,7 +21,10 @@ $products = array();
 foreach ($arr as $product) {
     $values = array();
 
-    $values[] = render('forms/image', array('ref'=>'camera.php', 'id'=>$product['id'], 'image'=>$product['image']));
+    $id = $product['id'];
+    $values[] = render('forms/image',
+        array('ref' => "camera.php?id=$id&login=$login&table=CAMERAS",
+            'image' => $product['image']));
     $values[] = $product['name'];
     $values[] = $product['quantity'];
     $values[] = $product['total_mp_quantity'];
