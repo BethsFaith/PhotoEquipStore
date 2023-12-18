@@ -25,7 +25,7 @@ if (isset($_COOKIE['user'])) {
         $res = updateGoodProperty($DB->getConnection(), $id, $name, $content, $table);
         echo $res ? "Изменения сохранены" : "Произошла ошибка во время сохранения";
 
-        $menuItems = getEditMenuItems('CAMERAS');
+        $menuItems = getEditMenuItems('CAMERAS', $login);
         $menu = render('forms/menu', array('items' => $menuItems));
 
         echo render('empty', array('menu' => $menu));

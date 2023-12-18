@@ -1,0 +1,1 @@
+DELETE FROM MEMORY_CARDS where volume > 0;

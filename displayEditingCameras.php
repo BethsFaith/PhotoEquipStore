@@ -6,7 +6,6 @@ include "DBFunc.php";
 include "User.php";
 include "menu.php";
 
-
 $login = $_GET['login'];
 if (isset($_COOKIE['user'])) {
     $cashLogin = $_COOKIE['user'];
@@ -42,7 +41,7 @@ if (isset($_COOKIE['user'])) {
         $menuItems = getEditMenuItems('CAMERAS', $login);
         $menu = render('forms/menu', array('items' => $menuItems));
 
-        $cap = render('forms/button', array('ref' => "addGood.php?table=CAMERAS", 'title' => 'Добавить новый товар'));
+        $cap = render('forms/button', array('ref' => "addGood.php?table=CAMERAS&login=$login", 'title' => 'Добавить новый товар'));
 
         echo render('goods', array('cap' => $cap, 'footer' => '', 'menu' => $menu, 'page' => 'cameras',
             'productTable' => $productTable, 'title' => 'Admin_Фотоаппараты', 'style' => "styles/editstyle.css"));
