@@ -1,0 +1,1 @@
+CREATE TABLE PAGES(id integer auto_increment primary key, name varchar(30) unique not null);

@@ -1,0 +1,135 @@
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+    color: #020202;
+    background-color: #ebcfff;
+    width: 200px;
+    height: 40px;
+}
+
+body {
+    font: 12px Tahoma, sans-serif;
+    border-top: 5px solid #7e7e7e;
+    margin: 0;
+}
+input[type="text"] {
+    background-color: #dbebff;
+    border: 1px solid #e7e7e7;
+    height: 30px;
+    color: #330000;
+    padding: 0 10px;
+    vertical-align: top;
+}
+p {
+    margin: 20px 0;
+}
+
+#heading {
+    margin: 30px 0;
+    padding-left: 20px;
+}
+
+h1 {
+    display: inline-block;
+    color: #7e7e7e;
+    font: 40px/40px 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0 10px;
+}
+
+nav a {
+    background: #cce5ff;
+    /*color: #cdffa4;*/
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style-position: inside;
+    font: 14px 'Oswald', sans-serif;
+    padding: 10px;
+}
+
+.top-menu li {
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 0;
+}
+
+aside {
+    float: left;
+    width: 250px;
+}
+section {
+    margin-left: 280px;
+    padding-bottom: 50px;
+}
+
+.aside-menu li {
+    font-weight: 300;
+    list-style-type: square;
+    border-top: 1px solid #e7e7e7;
+}
+
+.aside-menu li:first-child {
+    border: none;
+}
+
+.aside-menu li.active {
+    color: #f35b78;
+}
+
+.aside-menu a {
+    color: #1d8ea6;
+}
+
+figure {
+    display: inline-block;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+
+figure img {
+    display: block;
+    border: 1px solid #fff;
+    outline: 1px solid #c9c9c9;
+    width: 320px;
+    /*height: 175px;*/
+}
+
+figure figcaption {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+figure figcaption span {
+    display: block;
+    font-size: 14px;
+    color: #29c5e6;
+}
+
+img.full {
+    width: 320px;
+}
+
+section > figure + figure {
+    margin-left: 28px;
+}
+
+table {
+}
+td {
+    text-align: left;
+}
+th {
+    text-align: left;
+    height: 50px;
+}
