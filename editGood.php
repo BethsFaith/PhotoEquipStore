@@ -1,7 +1,7 @@
 <?php
 
-include "connect.php";
-include "functions.php";
+require_once "connect.php";
+include "templateFunc.php";
 include "User.php";
 include "menu.php";
 
@@ -10,10 +10,6 @@ $content = $_POST["content"];
 $table = $_GET['table'];
 $id = $_GET['id'];
 
-echo $name;
-echo $content;
-echo $table;
-
 $DB = getDB();
 if (!$DB->isOpen()) {
     return;
@@ -21,3 +17,8 @@ if (!$DB->isOpen()) {
 
 $res = updateGoodProperty($DB->getConnection(), $id, $name, $content, $table);
 echo $res ? "Изменения сохранены" : "Произошла ошибка во время сохранения" ;
+
+$menuItems = getEditMenuItems('CAMERAS');
+$menu = render('forms/menu', array('items'=>$menuItems));
+
+echo $menu;

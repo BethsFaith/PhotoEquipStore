@@ -1,7 +1,7 @@
 <?php
 
 require_once "connect.php";
-include 'functions.php';
+include 'templateFunc.php';
 
 $DB = getDB();
 if (!$DB->isOpen()) {

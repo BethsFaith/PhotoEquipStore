@@ -2,7 +2,8 @@
 
 require_once "connect.php";
 include "menu.php";
-include 'functions.php';
+include 'templateFunc.php';
+include 'DBFunc.php';
 
 $id = $_GET['id'];
 

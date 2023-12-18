@@ -2,12 +2,42 @@
 
 include 'PageElementEntity.php';
 
-function render($tmp,$vars = array()) {
-    if(file_exists('templates/'.$tmp.'.tpl.php')) {
-        ob_start();
-        extract($vars);
-        require 'templates/' . $tmp . '.tpl.php';
-        return ob_get_clean();
+function getProperties($conn, $table): array
+{
+    $sql = "SHOW COLUMNS FROM $table";
+    $result = $conn->query($sql);
+    $array = array();
+    while($row = $result->fetch()){
+        $array[] = $row['Field'];
+    }
+    return $array;
+}
+
+function insert($conn, $table, $properties) : bool
+{
+    $values = null;
+    $names = null;
+    $sql = "INSERT INTO $table (";
+    foreach ($properties as $key => $value) {
+        $names .= $key . ', ';
+        $values .= '\'' . $value  . '\', ';
+    }
+    $values = substr($values, 0, strlen($values)-2);
+    $names = substr($names, 0, strlen($names)-2);
+
+    $sql .= "$names) VALUES ($values) ";
+
+    try {
+        $result = $conn->exec($sql);
+        if ($result == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    catch (PDOException $ex) {
+        echo $ex->getMessage();
+        return false;
     }
 }
 
@@ -39,7 +69,7 @@ function getPageElements($conn, $pageId): array
     return $arr;
 }
 
-function updatePageElement($conn, $pageId, $name, $content)
+function updatePageElement($conn, $pageId, $name, $content): bool
 {
     $sql = "update PAGE_ELEMENTS set content = '$content' where name = '$name' and page_id = $pageId";
     try {
@@ -54,11 +84,10 @@ function updatePageElement($conn, $pageId, $name, $content)
     }
 }
 
-function updateGoodProperty($conn, $id, $propertyName, $propertyValue, $table)
+function updateGoodProperty($conn, $id, $propertyName, $propertyValue, $table): bool
 {
     $sql = "update $table set $propertyName = '$propertyValue' where id = $id";
     try {
-        echo $sql;
         $result = $conn->query($sql);
 
         return true;
@@ -89,5 +118,3 @@ function getGoodById($conn, $table, $id): array
 
     return $result->fetch();
 }
-
-?>

@@ -36,7 +36,7 @@
             <input type="submit" value="Отправить">
         </form>
     </figure>
-    </section>>
+    </section>
 </div>
 
 </body>

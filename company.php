@@ -1,8 +1,8 @@
 <?php
 
-
 require_once "connect.php";
-include 'functions.php';
+include 'templateFunc.php';
+include "DBFunc.php";
 include "menu.php";
 
 $DB = getDB();

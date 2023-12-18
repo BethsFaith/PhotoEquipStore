@@ -1,7 +1,8 @@
 <?php
 
-include "connect.php";
-include "functions.php";
+require_once "connect.php";
+include "templateFunc.php";
+include "DBFunc.php";
 include "User.php";
 include "menu.php";
 
@@ -26,4 +27,4 @@ $menuItems = getEditMenuItems('mainPage');
 
 $menu = render('forms/menu', array('items' => $menuItems));
 
-echo render('edit', array('menu' => $menu, 'items'=>$items, 'action'=>"editPage.php?page=MAIN_PAGE"));
+echo render('edit', array('cap'=>'','menu' => $menu, 'items'=>$items, 'action'=>"editPage.php?page=MAIN_PAGE"));

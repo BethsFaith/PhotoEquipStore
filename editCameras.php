@@ -1,7 +1,8 @@
 <?php
 
-include "connect.php";
-include "functions.php";
+require_once "connect.php";
+include "templateFunc.php";
+include "DBFunc.php";
 include "User.php";
 include "menu.php";
 
@@ -32,7 +33,7 @@ $productTable = render('forms/productTable', array('products'=>$products, 'title
 $menuItems = getEditMenuItems('cameras');
 $menu = render('forms/menu', array('items' => $menuItems));
 
-$footer = render('forms/button', array('ref'=>'addGood.php', 'title'=>'Добавить новый товар'));
+$footer = render('forms/button', array('ref'=>"addGood.php?table=CAMERAS", 'title'=>'Добавить новый товар'));
 
 echo render('goods', array('cap'=>$footer,'footer'=>'', 'menu' => $menu, 'page'=>'cameras',
     'productTable'=>$productTable, 'title'=>'Admin_Фотоаппараты'));

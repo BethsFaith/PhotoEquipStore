@@ -1,5 +1,4 @@
 <?php
-
 function getCommonMenuItems($pageName) : array
 {
     $arr = array(

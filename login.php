@@ -1,7 +1,7 @@
 <?php
 
-include "connect.php";
-include "functions.php";
+require_once "connect.php";
+include "templateFunc.php";
 include "User.php";
 include "menu.php";
 

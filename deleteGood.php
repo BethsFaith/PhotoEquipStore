@@ -1,12 +1,11 @@
 <?php
 
-include "connect.php";
+require_once "connect.php";
+include "menu.php";
+include "templateFunc.php";
 
 $id = $_GET['id'];
 $table = $_GET['table'];
-
-echo $id;
-echo $table;
 
 $DB = getDB();
 if (!$DB->isOpen()) {
@@ -23,3 +22,8 @@ try {
 catch (PDOException $ex) {
     echo 'Ошибка во время удаления:' . $ex->getMessage();
 }
+
+$menuItems = getEditMenuItems('CAMERAS');
+$menu = render('forms/menu', array('items'=>$menuItems));
+
+echo $menu;
