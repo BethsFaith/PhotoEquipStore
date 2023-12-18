@@ -21,7 +21,7 @@ if (isset($_COOKIE['user'])) {
         $items = array();
 
         foreach ($arr as $key=>$value) {
-            $items[] = array("name"=>$value->name,'content'=>$value->content);
+            $items[] = array("title"=>$value->name,"name"=>$value->name,'content'=>$value->content);
         }
 
         $menuItems = getEditMenuItems($page, $login);

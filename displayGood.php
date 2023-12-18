@@ -47,7 +47,7 @@ switch ($table) {
 
         $properties['Тип батареек']= $product['battery_type'];
         $properties['Количество батареек'] = $product['battery_count'];
-        $properties['Тип крепления'] = $product['type_bracing'];
+        $properties['Тип крепления'] = $product['bracing_type'];
         $properties['Совместимые камеры'] = $product['compatible_camera_model'];
         $properties['Гарантия (лет)'] = $product['guarantee_years'];
 

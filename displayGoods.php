@@ -33,7 +33,7 @@ switch ($goodType) {
                     'image' => $product['image']));
             $values[] = $product['name'];
             $values[] = $product['quantity'];
-            $values[] = $product['type_bracing'];
+            $values[] = $product['bracing_type'];
             $values[] = $product['compatible_camera_model'];
             $values[] = $product['price'];
 

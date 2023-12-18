@@ -21,7 +21,7 @@
         $num = count($items);
         for ($i = 0; $i < $num; ++$i) {
             ?>
-            <h3> <?php echo $items[$i]['name']?> </h3>
+            <h3> <?php echo $items[$i]['title']?> </h3>
             <p><?php echo $items[$i]['content']?></p>
         <?php } ?>
 
@@ -30,7 +30,7 @@
             <select name = "name">
                 <?php
                 for ($i = 0; $i < $num; ++$i) { ?>
-                    <option label="<?php echo $items[$i]['name']?>"
+                    <option label="<?php echo $items[$i]['title']?>"
                             value= "<?php echo $items[$i]['name']?>">
                     </option>
                 <?php } ?>

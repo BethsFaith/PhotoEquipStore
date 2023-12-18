@@ -31,12 +31,13 @@ function getEditMenuItems($pageName, $login) : array
         'COMPANY' => array('class' => '', 'content' => "displayEditingPage.php?login=$login&page=COMPANY",
             'name' => 'О фирме'),
 
-        'LENSES' => array('class' => '', 'content' => "editLenses.html", 'name' => 'Объективы'),
-        'CAMERAS' => array('class' => '', 'content' => "displayEditingCameras.php?login=$login",
+        'LENSES' => array('class' => '', 'content' => "displayEditingGoods.php?login=$login&table=LENSES",
+            'name' => 'Объективы'),
+        'CAMERAS' => array('class' => '', 'content' => "displayEditingGoods.php?login=$login&table=CAMERAS",
             'name' => 'Фотоаппараты'),
-        'FLASHES' => array('class' => '', 'content' => "editLenses.html?login=$login",
+        'FLASHES' => array('class' => '', 'content' => "displayEditingGoods.php?login=$login&table=FLASHES",
             'name' => 'Вспышки'),
-        'MEMORY_CARDS' => array('class' => '', 'content' => "editLenses.html?login=$login",
+        'MEMORY_CARDS' => array('class' => '', 'content' => "displayEditingGoods.php?login=$login&table=MEMORY_CARDS",
             'name' => 'Карты памяти'),
     );
 
