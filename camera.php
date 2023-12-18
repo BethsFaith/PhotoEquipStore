@@ -13,7 +13,7 @@ if (!$DB->isOpen()) {
 $cap = render('forms/cap');
 $footer = render('forms/footer');
 
-$menuItems = getCommonMenuItems('cameras');
+$menuItems = getCommonMenuItems('CAMERAS');
 $menu = render('forms/menu', array('items'=>$menuItems));
 
 $product = getGoodById($DB->getConnection(), 'CAMERAS', $_GET['id']);

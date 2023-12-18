@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo $title;?></title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="<?php echo $style;?>">
 </head>
 <body>
     <div id="wrapper">

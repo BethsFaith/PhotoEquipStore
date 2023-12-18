@@ -30,10 +30,10 @@ $productTable = render('forms/productTable', array('products'=>$products, 'title
     array('','Название товара','В наличии','Количество мегапикселей (общее)',
         'Тип матрицы', 'Цена')));
 
-$menuItems = getEditMenuItems('cameras');
+$menuItems = getEditMenuItems('CAMERAS');
 $menu = render('forms/menu', array('items' => $menuItems));
 
 $footer = render('forms/button', array('ref'=>"addGood.php?table=CAMERAS", 'title'=>'Добавить новый товар'));
 
 echo render('goods', array('cap'=>$footer,'footer'=>'', 'menu' => $menu, 'page'=>'cameras',
-    'productTable'=>$productTable, 'title'=>'Admin_Фотоаппараты'));
+    'productTable'=>$productTable, 'title'=>'Admin_Фотоаппараты', 'style'=>"styles/editstyle.css"));

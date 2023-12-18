@@ -73,7 +73,6 @@ function updatePageElement($conn, $pageId, $name, $content): bool
 {
     $sql = "update PAGE_ELEMENTS set content = '$content' where name = '$name' and page_id = $pageId";
     try {
-        echo $sql;
         $result = $conn->query($sql);
 
         return true;

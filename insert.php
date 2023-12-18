@@ -30,4 +30,4 @@ if ($res) {
 $menuItems = getEditMenuItems('CAMERAS');
 $menu = render('forms/menu', array('items'=>$menuItems));
 
-echo $menu;
+echo render('empty', array('menu'=>$menu));

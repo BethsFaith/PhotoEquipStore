@@ -13,7 +13,7 @@ if (!$DB->isOpen()) {
 $cap = render('forms/cap');
 $footer = render('forms/footer');
 
-$menuItems = getCommonMenuItems('cameras');
+$menuItems = getCommonMenuItems('CAMERAS');
 $menu = render('forms/menu', array('items'=>$menuItems));
 
 $arr = getGoods($DB->getConnection(), 'CAMERAS');
@@ -36,4 +36,4 @@ $productTable = render('forms/productTable', array('products'=>$products, 'title
         'Тип матрицы', 'Цена')));
 
 echo render('goods', array('cap'=>$cap, 'footer'=>$footer, 'menu'=>$menu, 'productTable'=>$productTable,
-    'title'=>'Фотоаппараты'));
+    'title'=>'Фотоаппараты', 'style'=>"styles/style.css"));

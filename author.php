@@ -17,7 +17,7 @@ $authorImage = $arr['authorImage']->content;
 $cap = render('forms/cap');
 $footer = render('forms/footer');
 
-$menuItems = getCommonMenuItems('author');
+$menuItems = getCommonMenuItems('AUTHOR');
 $menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('author', array('cap'=>$cap, 'footer'=>$footer, 'authorName'=>$authorName, 'authorWork'=>$authorWork,

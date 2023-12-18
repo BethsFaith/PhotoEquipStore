@@ -2,37 +2,37 @@
     <aside>
         <nav>
             <ui class = "top menu">
-                <li class= <?php echo $items['mainPage']['class']?>>
-                    <a href="<?php echo $items['mainPage']['content']?>">
-                    <?php echo $items['mainPage']['name']?></a></li>
+                <li class= <?php echo $items['MAIN_PAGE']['class']?>>
+                    <a href="<?php echo $items['MAIN_PAGE']['content']?>?page=MAIN_PAGE">
+                    <?php echo $items['MAIN_PAGE']['name']?></a></li>
 
-                <li class= <?php echo $items['author']['class']?>>
-                    <a href="<?php echo $items['author']['content']?>">
-                        <?php echo $items['author']['name']?></a></li>
+                <li class= <?php echo $items['AUTHOR']['class']?>>
+                    <a href="<?php echo $items['AUTHOR']['content']?>?page=AUTHOR">
+                        <?php echo $items['AUTHOR']['name']?></a></li>
 
-                <li class= <?php echo $items['company']['class']?>>
-                    <a href="<?php echo $items['company']['content']?>">
-                        <?php echo $items['company']['name']?></a></li>
+                <li class= <?php echo $items['COMPANY']['class']?>>
+                    <a href="<?php echo $items['COMPANY']['content']?>?page=COMPANY">
+                        <?php echo $items['COMPANY']['name']?></a></li>
             </ui>
         </nav>
 
         <nav>
             <ul class="aside-menu">
-                <li class= <?php echo $items['lenses']['class']?>>
-                    <a href="<?php echo $items['lenses']['content']?>">
-                        <?php echo $items['lenses']['name']?></a></li>
+                <li class= <?php echo $items['LENSES']['class']?>>
+                    <a href="<?php echo $items['LENSES']['content']?>">
+                        <?php echo $items['LENSES']['name']?></a></li>
 
-                <li class= <?php echo $items['cameras']['class']?>>
-                    <a href="<?php echo $items['cameras']['content']?>">
-                        <?php echo $items['cameras']['name']?></a></li>
+                <li class= <?php echo $items['CAMERAS']['class']?>>
+                    <a href="<?php echo $items['CAMERAS']['content']?>">
+                        <?php echo $items['CAMERAS']['name']?></a></li>
 
-                <li class= <?php echo $items['flashes']['class']?>>
-                    <a href="<?php echo $items['flashes']['content']?>">
-                        <?php echo $items['flashes']['name']?></a></li>
+                <li class= <?php echo $items['FLASHES']['class']?>>
+                    <a href="<?php echo $items['FLASHES']['content']?>">
+                        <?php echo $items['FLASHES']['name']?></a></li>
 
-                <li class= <?php echo $items['memoryCards']['class']?>>
-                    <a href="<?php echo $items['memoryCards']['content']?>">
-                        <?php echo $items['memoryCards']['name']?></a></li>
+                <li class= <?php echo $items['MEMORY_CARDS']['class']?>>
+                    <a href="<?php echo $items['MEMORY_CARDS']['content']?>">
+                        <?php echo $items['MEMORY_CARDS']['name']?></a></li>
             </ul>
         </nav>
     </aside>

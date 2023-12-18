@@ -25,4 +25,3 @@ $menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('createGood', array('product'=>$product, 'table'=>$table, 'menu'=>$menu,
     'cap'=>'', 'footer'=>''));
-

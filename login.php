@@ -13,7 +13,7 @@ if ($user->logIn(getDB()->getConnection(), $login, $password)) {
 
     $_SESSION['user']=["name"=>$user->getLogin()];
 
-    $menuItems = getEditMenuItems('mainPage');
+    $menuItems = getEditMenuItems('MAIN_PAGE');
 
     $menu = render('forms/menu', array('items'  => $menuItems));
 

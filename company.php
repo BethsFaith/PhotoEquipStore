@@ -19,7 +19,7 @@ $locationImage = $arr['locationImage']->content;
 $cap = render('forms/cap');
 $footer = render('forms/footer');
 
-$menuItems = getCommonMenuItems('company');
+$menuItems = getCommonMenuItems('COMPANY');
 $menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('company', array('cap'=>$cap, 'footer'=>$footer, 'companyImage1' => $companyImage1,
