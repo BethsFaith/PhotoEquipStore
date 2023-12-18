@@ -1,33 +1,30 @@
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+    color: #020202;
+    background-color: #ebcfff;
+    width: 200px;
+    height: 40px;
+}
+
 body {
-    color: #8f8f8f;
     font: 12px Tahoma, sans-serif;
-    background-color: #212020;
     border-top: 5px solid #7e7e7e;
     margin: 0;
 }
 input[type="text"] {
-    background-color: #f3f3f3;
+    background-color: #dbebff;
     border: 1px solid #e7e7e7;
     height: 30px;
-    color: #b2b2b2;
+    color: #330000;
     padding: 0 10px;
     vertical-align: top;
 }
-button {
-    color: #fff;
-    background-color: #29c5e6;
-    border: none;
-    height: 32px;
-    font-family: 'Oswald', sans-serif;
-}
 p {
     margin: 20px 0;
-}
-
-header img {
-    width: 100px;
-    padding-left: 20px;
-    margin-top: 10px;
 }
 
 #heading {
@@ -43,33 +40,8 @@ h1 {
     padding: 0 10px;
 }
 
-blockquote {
-    margin: 0;
-    background: #29c5e6;
-    padding: 10px 20px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-}
-
-blockquote p {
-    color: #fff;
-    font-style: italic;
-    font-size: 33px;
-    margin: 0;
-}
-
-blockquote cite {
-    display: block;
-    font-size: 20px;
-    font-style: normal;
-    color: #1d8ea6;
-    margin: 0;
-    text-align: right;
-}
-
 nav a {
-    text-decoration: none;
-    color: #e7e7e7;
+    background: #cce5ff;
     /*color: #cdffa4;*/
 }
 
@@ -82,20 +54,6 @@ nav li {
     list-style-position: inside;
     font: 14px 'Oswald', sans-serif;
     padding: 10px;
-}
-
-.top-menu li {
-    display: inline-block;
-    padding: 10px 30px;
-    margin: 0;
-}
-
-.top-menu li.active {
-    color: #29c5e6;
-}
-
-.top-menu a {
-    color: #b2b2b2;
 }
 
 .top-menu li {
@@ -174,29 +132,4 @@ td {
 th {
     text-align: left;
     height: 50px;
-}
-
-footer {
-    /*background: #8f8f8f;*/
-    color: #8f8f8f;
-    font-size: 11px;
-    height: 100px;
-    /*width: 200px;*/
-    position:fixed;
-    left:0;
-    bottom: 0;
-}
-
-#footer {
-    max-width: 200px;
-    margin: auto;
-    padding: 10px 0;
-}
-
-footer a {
-    display: inline-block;
-    padding: 10px 30px;
-    margin: auto;
-    color: #8f8f8f;
-    text-align: left;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Об авторе</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <div id="wrapper">
@@ -11,6 +11,7 @@
 
     <div class="menu"> <?php echo $menu;?> </div>
 
+    <section>
     <figure>
         <img src=<?php echo $product['image'];?> alt="">
         <h3> Модель </h3>
@@ -30,6 +31,7 @@
         <h3> Цена </h3>
         <p>  <?php echo $product['price'];?> </p>
     </figure>
+    </section>
 
 <div class="footer"> <?php echo $footer;?> </div>
 

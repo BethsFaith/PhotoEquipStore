@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Магазин фототехники</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <div id="wrapper">
@@ -19,12 +19,7 @@
             <cite><?php echo $quoteAuthor;?></cite>
         </blockquote>
 
-        <p>It was taken some time ago</p>
-        <p>Of paper I was looking through</p>
-        <p>At first it seems to be,</p>
-        <p>a smeared.</p>
-        <p>print: blurred lines and grey flecks</p>
-        <p>blended with the paper;</p>
+        <?php echo $about;?>
 
         <figure>
             <img src=<?php echo $contentImage;?> alt="">

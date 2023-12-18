@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Фотоаппараты</title>
-    <link rel="stylesheet" href="style.css">
+    <title><?php echo $title;?></title>
+    <link rel="stylesheet" href="<?php echo $style;?>">
 </head>
 <body>
     <div id="wrapper">

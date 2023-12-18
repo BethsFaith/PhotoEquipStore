@@ -9,6 +9,13 @@ INSERT INTO PAGE_ELEMENTS (name, type, content, page_id) VALUES
      'Дестин Спаркс',
      @id);
 INSERT INTO PAGE_ELEMENTS (name, type, content, page_id) VALUES
+    ('about', 'p', '<p>It was taken some time ago</p>
+        <p>Of paper I was looking through</p>
+        <p>At first it seems to be,</p>
+        <p>a smeared.</p>
+        <p>print: blurred lines and grey flecks</p>
+        <p>blended with the paper;</p>', @id);
+INSERT INTO PAGE_ELEMENTS (name, type, content, page_id) VALUES
     ('contentImage1', 'img',
      'images/content1.jpg',
      @id);

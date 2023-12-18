@@ -1,8 +1,8 @@
 <?php
 
-
 require_once "connect.php";
-include 'functions.php';
+include 'templateFunc.php';
+include "DBFunc.php";
 include "menu.php";
 
 $DB = getDB();
@@ -16,11 +16,11 @@ $address = $arr['address']->content;
 $phoneNumber = $arr['phoneNumber']->content;
 $locationImage = $arr['locationImage']->content;
 
-$cap = render('cap');
-$footer = render('footer');
+$cap = render('forms/cap');
+$footer = render('forms/footer');
 
-$menuItems = getCommonMenuItems('company');
-$menu = render('menu', array('items'=>$menuItems));
+$menuItems = getCommonMenuItems('COMPANY');
+$menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('company', array('cap'=>$cap, 'footer'=>$footer, 'companyImage1' => $companyImage1,
     'companyImage2' => $companyImage2, 'address'=>$address, 'phoneNumber'=>$phoneNumber,
