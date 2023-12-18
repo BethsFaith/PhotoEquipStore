@@ -8,23 +8,28 @@ include "menu.php";
 
 $name = $_POST["name"];
 $content = $_POST["content"];
-$page = $_GET['page'];
+$table = $_GET['table'];
+$id = $_GET['id'];
 
 $login = $_GET['login'];
+
 if (isset($_COOKIE['user'])) {
     $cashLogin = $_COOKIE['user'];
+    echo $cashLogin;
     if ($cashLogin == $login) {
         $DB = getDB();
         if (!$DB->isOpen()) {
             return;
         }
-        $page_id = getPageId($DB->getConnection(), $page);
-        $res = updatePageElement($DB->getConnection(), $page_id, $name, $content);
-        echo $res ? "Изменения сохранены" : "Произошла ошибка во время сохранения" ;
 
-        $menuItems = getEditMenuItems($page, $login);
+        $res = updateGoodProperty($DB->getConnection(), $id, $name, $content, $table);
+        echo $res ? "Изменения сохранены" : "Произошла ошибка во время сохранения";
+
+        $menuItems = getEditMenuItems('CAMERAS', $login);
         $menu = render('forms/menu', array('items' => $menuItems));
-        echo render('empty', array('menu'=>$menu));
+
+        echo render('empty', array('menu' => $menu));
+
         return;
     }
 }

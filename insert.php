@@ -6,6 +6,7 @@ include "menu.php";
 include "DBFunc.php";
 
 $table = $_GET['table'];
+$login = $_GET['login'];
 
 $DB = getDB();
 if (!$DB->isOpen()) {
@@ -27,7 +28,7 @@ if ($res) {
     echo "Добавление завершилось с ошибкой";
 }
 
-$menuItems = getEditMenuItems('CAMERAS');
+$menuItems = getEditMenuItems('CAMERAS', $login);
 $menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('empty', array('menu'=>$menu));

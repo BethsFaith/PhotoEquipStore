@@ -46,6 +46,7 @@ function getPageId($conn, $pageName)
     $sql = "select * from PAGES where name = '$pageName'";
     $result = $conn->query($sql);
     $row = $result->fetch();
+
     return $row["id"];
 }
 

@@ -5,6 +5,7 @@ include "menu.php";
 include "DBFunc.php";
 include 'templateFunc.php';
 
+$login = $_GET['login'];
 $table = $_GET['table'];
 
 $DB = getDB();
@@ -20,8 +21,8 @@ foreach ($properties as $value) {
     }
 }
 
-$menuItems = getEditMenuItems('CAMERAS');
+$menuItems = getEditMenuItems('CAMERAS', $login);
 $menu = render('forms/menu', array('items'=>$menuItems));
 
 echo render('createGood', array('product'=>$product, 'table'=>$table, 'menu'=>$menu,
-    'cap'=>'', 'footer'=>''));
+    'cap'=>'', 'footer'=>'', 'login'=>$login));

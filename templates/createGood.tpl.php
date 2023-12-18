@@ -10,13 +10,16 @@
 
     <div class="cap"> <?php echo $cap;?> </div>
 
+    <p class="heading"> User:
+        <?php echo $_COOKIE['user']; ?>
+
     <div class="menu"> <?php echo $menu;?> </div>
 
     <section>
         <figure>
             <?php
             $num = count($product); ?>
-             <form action="insert.php?table=<?php echo $table?>" method="POST">
+             <form action="insert.php?table=<?php echo $table?>&login=<?php echo $login?>" method="POST">
                  <?php foreach ($product as $key => $value) : ?>
                 <h2><input type="text" name="<?php echo $key?>"/> <?php echo $key?></h2>
                  <?php endforeach?>

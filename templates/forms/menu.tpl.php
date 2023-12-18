@@ -3,15 +3,15 @@
         <nav>
             <ui class = "top menu">
                 <li class= <?php echo $items['MAIN_PAGE']['class']?>>
-                    <a href="<?php echo $items['MAIN_PAGE']['content']?>?page=MAIN_PAGE">
+                    <a href="<?php echo $items['MAIN_PAGE']['content']?>">
                     <?php echo $items['MAIN_PAGE']['name']?></a></li>
 
                 <li class= <?php echo $items['AUTHOR']['class']?>>
-                    <a href="<?php echo $items['AUTHOR']['content']?>?page=AUTHOR">
+                    <a href="<?php echo $items['AUTHOR']['content']?>">
                         <?php echo $items['AUTHOR']['name']?></a></li>
 
                 <li class= <?php echo $items['COMPANY']['class']?>>
-                    <a href="<?php echo $items['COMPANY']['content']?>?page=COMPANY">
+                    <a href="<?php echo $items['COMPANY']['content']?>">
                         <?php echo $items['COMPANY']['name']?></a></li>
             </ui>
         </nav>
